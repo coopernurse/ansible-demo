@@ -1,0 +1,16 @@
+
+Run ssh-agent and add the .pem file used for EC2:
+
+    ssh-agent
+    ssh-add ~/path/to/foo.pem
+
+Export EC2 vars and boot demo-web:
+
+    export AWS_ACCESS_KEY_ID=xxx
+    export AWS_SECRET_ACCESS_KEY=yyy
+
+    scripts/boot_ec2.py demo-web
+
+Run ansible to provision server:
+
+    ansible-playbook -s -i hosts playbooks/demo-web.yml

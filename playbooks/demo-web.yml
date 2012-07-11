@@ -1,0 +1,18 @@
+---
+- name: demo-web
+  hosts: demo-web
+  user: ubuntu
+
+  tasks:
+
+    - name: install git
+      action: apt pkg=git state=installed update-cache=yes
+    - name: install build-essential
+      action: apt pkg=build-essential state=installed 
+    - name: install curl
+      action: apt pkg=curl state=installed
+    - name: install pip
+      action: apt pkg=python-pip state=installed
+
+    - name: download project from github
+      action: command 
